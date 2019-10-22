@@ -1,0 +1,30 @@
+body{
+    background: rgb(11, 10, 59);
+}
+
+header{
+    margin-top: 50px;
+    text-align: center;
+    font: normal 26pt Ubuntu;
+    color: white;
+}
+
+div#visor{
+    text-align: center;
+    font: normal 16pt Ubuntu;
+    background-color: white;
+}
+
+div#calc{
+    text-align: center;
+    margin-top: 100px;
+}
+
+input#buttun{
+    background-color: white;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    width: 50px;
+    margin-bottom: 3px;
+}
