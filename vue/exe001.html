@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue-js</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+        <div id="app">
+            <p>{{msg}}</p>
+            <p>{{EhStatus ? 'Verdade': 'Falso' }}</p>
+            <p>{{client}}</p>
+            <p>{{client[0]}}</p>
+            <p>Nome do cliente: {{NameClient.nome}}</p>
+            <p>{{5 +numb1}}</p>
+            <p>{{fun()}}</p>
+            <p>{{fun2()}}</p>
+            <p>{{metClient(1)}}</p>
+            <p>{{metNameClient()}}</p>
+        </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello',
+                EhStatus: true,
+                client: ['Ariel', 'Alysson', 'Matheus'],
+                NameClient: {nome: 'Ariel', idade: 26},
+                numb1: 1,
+                fun: () => {
+                    return 'Mensagem da função!!!'
+                },
+
+                fun2: function() {
+                    return "msg 2!!!"
+                }
+            },
+
+            methods: {
+                metClient(id) {
+                    return "Nome do cliente: " + this.client[id]  
+                },
+
+                metNameClient() {
+                    return 'info: ' + this.NameClient.nome + ", idade: "+ this.NameClient.idade 
+                }
+
+            },  
+        })
+    </script>
+    
+</body>
+</html>
