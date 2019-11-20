@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>laço for</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app">
+        <div v-for="srcImg in shieldImg">
+            <img :src="srcImg" width="100px" >
+        </div>
+
+        <!-- <p v-for="(shields,index) in shieldName">{{index+1}} - {{shields.name}} - {{shields.price}} </p>  -->
+        <hr>
+        <div>
+            <ul>
+                <li v-for="(value, key, index) in userShield">
+                    <p>{{index+1}} - <b>{{key}}:</b> {{value}}</p>
+                </li>
+            </ul>
+        </div>
+            
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+
+                shieldImg: ["shield.png",
+                    "shield2.png",
+                    "shield3.jpeg"],
+
+                userShield:{
+                            name: "Link",
+                            lastname: "Silva",
+                            phone: "(41) 9999-9999",
+                            email: "link@gmail.com"
+                            },
+
+                shieldName: [
+                {name:'Escudo do capitão', price: 'R$ 250.000'},
+                {name:'Escudo aleatório', price:'R$ 5'},
+                {name:'Escudo do Link',price: 'R$ 900'}],
+
+                
+            }
+        })
+    </script>
+
+</body>
+</html>

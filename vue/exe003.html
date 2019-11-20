@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(46, 46, 48);
+            color: honeydew;
+        }
+    </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="texto">
+        <p>Digite 1, para exibir o escudo do Capitão América</p>
+        <p>Digite 2, para exibir um escudo genérico</p>
+    </div>
+
+    <div id="app">
+        <input type="text" v-model="textTC">
+        você escolheu: {{textTC}}
+        <br>
+        <div v-if="textTC==1">
+            <img v-bind:src="scrImg" :title="titleImg" width="100px">
+        </div>
+
+        <div v-if="textTC == 2">
+            <img :src="scrImg2" :title="titleImg">
+        </div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                scrImg: 'shield.png',
+                scrImg2: 'shield2.png',
+                titleImg: 'LogoCapitan',
+                textTC:''
+            }
+        })
+    </script>
+</body>
+</html>

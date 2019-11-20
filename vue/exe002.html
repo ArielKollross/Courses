@@ -10,16 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <div id="app">
-        <p>{{msg}}</p>
-    </div>
+        <img 
+       v-bind:src="srcImg" 
+       :title="titleImg"> <!-- v-bind == : -->
+
+       <a  v-bind:href="url">vue</a>
+
+       <hr>
+       <p v-html="texPar"> </p>
+
+    </div> 
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                msg: 'Teste msg!'
+                srcImg: 'shield.png',
+                titleImg: 'Logo Capitan',
+                url: 'http://vuejs.org',
+                texPar: 'Este é um texto <br> HTML com formatação!'
             }
         })
+
     </script>
 </body>
 </html>
