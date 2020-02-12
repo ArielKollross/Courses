@@ -7,7 +7,7 @@ const prod2 = {
     nome: "Ariel",
     categoria: "Gold",
     age: 26,
-    email: "arielkollross@gmail.com",
+    email: "arielkollross@email.com",
     obj:{
         obj:{
 
