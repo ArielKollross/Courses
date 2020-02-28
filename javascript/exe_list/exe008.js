@@ -10,17 +10,15 @@ jogo. (Número do pior jogo).
 const jogosAnalise = (par1, ...parN) => {
     const lista = []
     lista.push(par1, ...parN)
-    let maior = lista[1]
+    lista.shift()
+    let maior = lista[0]
     let menor = lista[0]
 
     function gamefilter() {
         for(let i in lista){
-            while(lista[i] = lista[0]){
-                return false
-            }
             if(lista[i] >= maior)
                 maior = lista[i]
-            if(lista[i] <= menor )
+            if(lista[i] <= menor)
                 menor = lista[i]
         }
         const res = []
@@ -30,4 +28,4 @@ const jogosAnalise = (par1, ...parN) => {
     gamefilter()
 }
 
-jogosAnalise(1,2,3,4)
+jogosAnalise(7,2,3,4)
