@@ -6,6 +6,13 @@ function imprimir(nome, indice) {
     console.log(`${indice +1}, ${nome}`)
 }
 
+// funcao() é a função a ser executada para cada elemento do array. Pode receber três parâmetros:
+
+//     1-valorAtual é o valor da posição atual sendo percorrida no array. Parâmetro obrigatório na declaração a função.
+//     2- índice é a posição do array que está sendo lida. Parâmetro opcional da função.
+//     3- array é o array a ser percorrido no forEach().Parâmetro opcional da função.
+
+//array.forEach(funcao([valorAtual, índice, array]), argumentoThis)
 fabricante.forEach(imprimir)
 
 let user = ["Alice", "Bob", "Batman"]
