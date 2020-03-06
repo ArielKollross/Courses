@@ -7,9 +7,7 @@ const carrinho = [
 ]
 //retornar um array com os preços
 
-const covnersorJSON = carrinho.map( x =>{
-    return JSON.parse(x)
-})
+const covnersorJSON = carrinho.map( x => {return JSON.parse(x)} )
+const getPreco = covnersorJSON.map( p => 'R$ '+parseFloat(p.preco).toFixed(2).replace('.', ','))
 
-console.log(covnersorJSON)
-
+console.log(getPreco)
