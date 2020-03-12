@@ -19,7 +19,7 @@ const bolsistas = alunos.map( e => e.bolsista).reduce(
 
     console.log(bolsistas)
 
-const temBolsista = alunos.map( e=> e.bolsista).reduce(
+const temBolsista = alunos.map( e => e.bolsista).reduce(
     (acumulador, atual) => {
         let count = 0
         while(atual==true){
