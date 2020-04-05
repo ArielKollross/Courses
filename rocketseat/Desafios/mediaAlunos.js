@@ -7,18 +7,24 @@ const alunos = [
     {name: "Aluno 6",grade: 8.0 },   
 ]
 
-let sum = 0
-let med = 0
-let count = 0
+function GradeSum(array) {
+    let sum = 0
 
-function calcMedia(array) {
-        sum += array.grade
-        count++
-        
-        return  med = sum/count    
+    for(let i in array){
+        sum += array[i].grade
+    }
+    return sum
 }
 
-alunos.forEach(calcMedia)
-console.log(med)
+function CalculateAvagare(array) {
+
+    const sum = GradeSum(alunos)
+
+    return sum/ array.length
+}
+
+console.log(CalculateAvagare(alunos))
+
+
 
 

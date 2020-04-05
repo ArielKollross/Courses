@@ -1,6 +1,5 @@
 const retirement = (name, gender, age, contribution) => {
-    //fist way - male 35 female 30
-    //second way - male: age+contribution == 95 , female: age+contribution == 85
+
     let femaleRetirement = (gender == 'female' && 
                             contribution >= 30 && 
                             contribution+age >= 85 ) ? statusF = true : statusF = false
