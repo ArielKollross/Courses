@@ -16,24 +16,24 @@ const users = [
   }
 ];
 
-let {revenue,outlay, balance } = 0
+function userBalnceCalculation(array) {
 
-function userBalnce(array) {
-    revenue = array.revenue.reduce((accumulator, baseValue ) => {
-       return accumulator + baseValue
-      })
+  revenue = array.revenue.reduce((accumulator, baseValue) => {
+    return accumulator + baseValue
+  })
 
-    outlay = array.outlay.reduce((accumulator, baseValue) => {
-      return accumulator + baseValue
-    })
+  outlay = array.outlay.reduce((accumulator, baseValue) => {
+    return accumulator + baseValue
+  })
 
-    balance = revenue - outlay
-    
-    if(balance >= 0){
-        console.log(`${array.name} possui saldo POSITIVO de R$: ${balance.toFixed(2)}`)
-    }else{
-        console.log(`${array.name} possui saldo NEGATIVO de R$: ${balance.toFixed(2)}`) 
-    }
+  balance = revenue - outlay
+
+  if(balance >= 0){
+      console.log(`${array.name} possui saldo POSITIVO de R$: ${balance.toFixed(2)}`)
+  }else{
+      console.log(`${array.name} possui saldo NEGATIVO de R$: ${balance.toFixed(2)}`) 
+  }
 }
 
-users.forEach(userBalnce)
+users.forEach(userBalnceCalculation)
+
