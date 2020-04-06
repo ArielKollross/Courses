@@ -44,24 +44,23 @@ function calculationBalance(obj) {
   return obj.balance = balance
 }
 
-async function getHigherTransactionByType(typeTransaction){
-  const stanbay = await user.transactions.length != 0
- 
-  let amount =  user.transactions[0].value //undefined while createTransaction not execute
+function getHigherTransactionByType(typeTransaction){
+
+  let amount = user.transactions[0].value //undefined while createTransaction not execute
   let output = {}
 
 for(let i in user.transactions){
-    if(user.transactions[i].type == typeTransaction){
-      if(user.transactions[i].value > amount )
-      user.transactions = amount
+    if(user.transactions[i].type == typeTransaction && 
+        user.transactions[i].value > amount ) {
+      amount = transactions.value
     }
   }
-    return output[type,value] = typeTransaction, amount 
+    return output.value = amount
 }
 
 createTransaction(user, "credit", 100)
 createTransaction(user, "debit", 50)
-createTransaction(user, "credit",1680,)
+createTransaction(user, "credit",1680)
 createTransaction(user, "debit", 400)
 
 userBalance(user)
