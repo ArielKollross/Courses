@@ -22,7 +22,7 @@ function createTransaction(obj, type, valueTransaction) {
   })
 }
 
-function userBalance(obj) {
+function getUserBalance(obj) {
   const balance = []
   // Object.entries(obj.transactions).forEach(([key, val])=>{(val.type, val.value)})
   for (let i in obj.transactions) {
@@ -38,21 +38,20 @@ function userBalance(obj) {
 
 function calculationBalance(obj) {
 
-  const balance = userBalance(user)
-    .reduce((el, base)=> el+base )
+  const balance = getUserBalance(user).reduce((el, base)=> el+base )
 
   return obj.balance = balance
 }
 
 function getHigherTransactionByType(typeTransaction){
 
-  let amount = user.transactions[0].value //undefined while createTransaction not execute
+  let amount = 0//user.transactions[0].value //undefined while createTransaction not execute
   let output = {}
 
-for(let i in user.transactions){
-    if(user.transactions[i].type == typeTransaction && 
-        user.transactions[i].value > amount ) {
-      amount = transactions.value
+for(let i of user.transactions){
+ // if(user.transactions[i].type == typeTransaction && user.transactions[i].value > amount ) {
+    if(i.type == typeTransaction && i.value > amount ) {
+      amount = i.value
     }
   }
     return output.value = amount
@@ -63,8 +62,6 @@ createTransaction(user, "debit", 50)
 createTransaction(user, "credit",1680)
 createTransaction(user, "debit", 400)
 
-userBalance(user)
+getUserBalance(user)
 calculationBalance(user)
-
-
 console.log(getHigherTransactionByType('credit'))
