@@ -1,12 +1,6 @@
 /* Crie um programa para realizar operações bancárias na conta de um usuário.
 Adicionar transações
 
--Crie uma função createTransaction para adicionar uma nova transação no 
-obj de transações de um usuário, essa função deve receber como parâmetro um 
-objeto de transação que tem o seguinte formato:{
-  type: 'credit',
-  value: 50.5
-}
 */
 
 const user = {
@@ -30,7 +24,6 @@ function getUserBalance(obj) {
     let value = obj.transactions[i].value
 
     type == "debit" ? value = -1 * value : false
-    //console.log(type, value)
     balance.push(value)
   }
   return balance
@@ -45,16 +38,39 @@ function calculationBalance(obj) {
 
 function getHigherTransactionByType(typeTransaction){
 
-  let amount = 0//user.transactions[0].value //undefined while createTransaction not execute
-  let output = {}
+  let amount = user.transactions[0].value
+  let output
 
 for(let i of user.transactions){
  // if(user.transactions[i].type == typeTransaction && user.transactions[i].value > amount ) {
     if(i.type == typeTransaction && i.value > amount ) {
       amount = i.value
+      output = i
     }
   }
-    return output.value = amount
+    return output
+}
+
+function getTransactionsCount() {
+  const aux = {}
+  let [countDebit, countCredit] = [0,0]
+
+  for(i of user.transactions)
+    (i.type == 'credit') ? countCredit++ : countDebit++
+
+    aux.credit = countCredit
+    aux.debit = countDebit
+
+    return aux
+}
+
+ function getAverageTransactionValue() {
+  let sum = 0
+
+  for(i of user.transactions) {
+      sum += i.value
+  }
+  return sum / user.transactions.length
 }
 
 createTransaction(user, "credit", 100)
@@ -65,3 +81,5 @@ createTransaction(user, "debit", 400)
 getUserBalance(user)
 calculationBalance(user)
 console.log(getHigherTransactionByType('credit'))
+console.log(getTransactionsCount())
+console.log(getAverageTransactionValue())
